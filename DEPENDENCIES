@@ -797,7 +797,7 @@ npm/npmjs/@typescript-eslint/visitor-keys/7.18.0, MIT, approved, clearlydefined
 npm/npmjs/@ungap/structured-clone/1.2.0, ISC, approved, clearlydefined
 npm/npmjs/@vitejs/plugin-react/4.3.3, MIT, approved, #14877
 npm/npmjs/-/cypress/13.15.2, MIT, approved, clearlydefined
-npm/npmjs/-/ecc-jsbn/0.1.2, MIT, approved, clearlydefined
+npm/npmjs/-/ecc-jsbn/0.1.2, ISC, approved, clearlydefined
 npm/npmjs/-/tldts-core/6.1.61, , approved, clearlydefined
 npm/npmjs/-/tldts/6.1.61, , approved, clearlydefined
 npm/npmjs/-/tough-cookie/5.0.0, BSD-3-Clause, approved, clearlydefined
