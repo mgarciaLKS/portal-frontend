@@ -2,10 +2,13 @@
 name: Umbrella Sandbox Setup
 
 on:
-  workflow_run:
-    workflows: ["build.yml"]
-    types:
-      - completed  # This ensures it runs after the build workflow is completed
+  push:
+    branches:
+      - 'main'
+  # workflow_run:
+    # workflows: ["build.yml"]
+    # types:
+    #   - completed  # This ensures it runs after the build workflow is completed
   workflow_dispatch:
     inputs:
       node_image:
