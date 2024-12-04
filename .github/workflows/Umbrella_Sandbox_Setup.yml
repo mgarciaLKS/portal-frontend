@@ -68,7 +68,7 @@ jobs:
       run: |
         helm install \
         --set portal.enabled=true,centralidp.enabled=true,sharedidp.enabled=true umbrella tractusx-dev/umbrella \
-        --set portal.frontend.image.repository=kind-registry:5000/portal-frontend --set iatpmock.image.tag=testing \
+        --set portal.frontend.image.repository=kind-registry:5000/portal-frontend --set portal.frontend.image.tag=testing \
         --namespace umbrella --create-namespace
 
     - name: Verify Deployment
