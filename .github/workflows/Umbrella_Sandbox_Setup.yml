@@ -31,6 +31,13 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Build portal frontend
+      uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56 # v5.1.0
+      with:
+        context: .
+        push: true
+        tags: kind-registry:5000/portal-frontend:testing
+        
     - name: Kubernetes KinD Cluster
       uses: container-tools/kind-action@0ad70e2299366b0e1552c7240f4e4567148f723e
       with:
@@ -55,8 +62,9 @@ jobs:
     - name: Install Umbrella Chart Portal Subset
       run: |
         helm install \
-        --set portal.enabled=true,centralidp.enabled=true,sharedidp.enabled=true \
-        umbrella tractusx-dev/umbrella --namespace umbrella --create-namespace
+        --set portal.enabled=true,centralidp.enabled=true,sharedidp.enabled=true umbrella tractusx-dev/umbrella \
+        --set portal.frontend.image.repository=kind-registry:5000/portal-frontend --set iatpmock.image.tag=testing \
+        --namespace umbrella --create-namespace
 
     - name: Verify Deployment
       run: |
