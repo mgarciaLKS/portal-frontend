@@ -68,7 +68,7 @@ jobs:
 
     - name: Install Cypress Dependencies
       run: |
-        npm install cypress
+        npm install cypress --legacy-peer-deps
 
     - name: Run Cypress Tests
       env:
